@@ -5,11 +5,12 @@
 <h3>Basic project requirements:</h3>
 <ul>
   <li><b>UBUNTU</b> - version: 16.04</li>
+  <li><b>PYTHON</b> - version: 2.7</li>
   <li><b>TORQUE PBS</b> - version: 6.0.2</li>
   <li><b>PBS_python</b> library - version: 4.6.0</li>
   <li><b>PAM</b> library - version: 1.8.2</li>
 </ul>
-
+<p>I assume you already have latest versions of <b>PIP, VIRTUAL-ENV, VIRTUAL-ENV-WRAPPER</b> installed and configured.</p>
 <ul>
   <li>
     <h3>System libraries required</h3>
@@ -18,6 +19,14 @@
           <b>Python software properties</b>
           <ul>
             <li>$ apt-get install python-software-properties</li>
+          </ul>
+        </li>
+        <li>
+          <b>Python &amp; MySQL</b>
+          <ul>
+            <li>apt install mysql-server mysql-client</li>
+            <li>$ mysql_secure_installation</li>
+            <li>$ apt-get install libmysqlclient-dev</li>
           </ul>
         </li>
         <li>
