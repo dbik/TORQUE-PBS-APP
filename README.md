@@ -15,22 +15,22 @@ Basic project requirements:
 <h4>System libraries required</h4>
 <ul>
   <li>
+    <b>Python software properties</b>
     <ul>
-      <li><b>Python software properties</b></li>
       <li>$ apt-get install python-software-properties</li>
     </ul>
   </li>
   <li>
+    <b>Java 8 install</b>
     <ul>
-      <li><b>Java 8 install</b></li>
       <li>$ add-apt-repository ppa:webupd8team/javaapt-get update</li>
       <li>$ apt-get update</li>
       <li>$ apt-get install oracle-java8-installer</li>
     </ul>
   </li>
   <li>
+    <b>Torque required libs</b>
     <ul>
-      <li><b>Torque required libs</b></li>
       <li>$ apt-get install libxml2-dev</li>
       <li>$ apt-get install libssl-dev</li>
       <li>$ apt-get install tk8.5 tcl8.5</li>
