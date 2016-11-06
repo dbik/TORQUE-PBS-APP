@@ -103,6 +103,19 @@
         </li>
       </ul>
     </li>
+    <li>
+      <h3>PAM python installation and configuration</h3>
+      <ul>
+        <li>
+          <b>Install</b>
+          <ul>
+            <li>Download PAM python from <a href="https://pypi.python.org/pypi/python-pam/">PAM</a></li>
+            <li>Extract files</li>
+            <li>$ cp pam.py /usr/local/lib/python2.7/dist-packages/</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
 </ul>
 
 <i>For full project posibilities it is suggested more than one pbs_moms.</i>
