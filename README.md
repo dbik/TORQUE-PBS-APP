@@ -6,8 +6,8 @@
 <ul>
   <li><b>UBUNTU</b> - version: 16.04</li>
   <li><b>TORQUE PBS</b> - version: 6.0.2</li>
-  <li><b>PBS_python</b> library</li>
-  <li><b>PAM</b> library</li>
+  <li><b>PBS_python</b> library - version: 4.6.0</li>
+  <li><b>PAM</b> library - version: 1.8.2</li>
 </ul>
 
 <ul>
