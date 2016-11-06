@@ -1,11 +1,10 @@
 # TORQUE-PBS-APP
-<h3>Restful web application, allows users to interact with Torque pbs over a WEB UI</h3>
+<h3>Restful web application that allows users to interact with Torque pbs through a WEB UI</h3>
 <p>e.g. Submit, manage jobs and monitor cluster resources</p>
-<p>The project has been installed and configured in <b>Ubuntu 16.04</b> OS</p>
-<i>For full project posibilities it is suggested more than one pbs_moms.</i>
 
 <h3>Basic project requirements:</h3>
 <ul>
+  <li><b>UBUNTU</b> - version: 16.04</li>
   <li><b>TORQUE PBS</b> - version: 6.0.2</li>
   <li><b>PBS_python</b> library</li>
   <li><b>PAM</b> library</li>
@@ -105,3 +104,5 @@
       </ul>
     </li>
 </ul>
+
+<i>For full project posibilities it is suggested more than one pbs_moms.</i>
