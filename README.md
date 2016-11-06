@@ -7,7 +7,7 @@
 <h3>Basic project requirements:</h3>
 <ul>
   <li><b>Torque pbs</b> - version: 6.0.2 - available at: </li>
-  <li><b>Pbs_python</b> library - available at <a href="https://oss.trac.surfsara.nl/pbs_python/">Surfsara</a></li>
+  <li><b>Pbs_python</b> library - available at </li>
 </ul>
 
 <h3>System libraries required</h3>
@@ -40,13 +40,61 @@
   </li>
 </ul>
 
-<h3>Torque install and configuration in Ubuntu 16.04</h3>
+<h3>Torque installation and configuration in Ubuntu 16.04</h3>
 <ul>
-  <li>Download Torque V6.0.2 from <a href="https://www.adaptivecomputing.com">Adaptive computing</a></li>
-  <li>Extract files</li>
-  <li>$ suco mv &lt;torque_directory&gt; /usr/local/</li>
-  <li>$ cd /usr/local/&lt;torque_directory&gt;</li>
-  <li>$ ./configure</li>
-  <li>$ make</li>
-  <li>$ make install</li>
+  <li>
+    <b>Install</b>
+    <ul>
+      <li>Download Torque V6.0.2 from <a href="https://www.adaptivecomputing.com">Adaptive computing</a></li>
+      <li>Extract files</li>
+      <li>$ mv &lt;torque_directory&gt; /usr/local/</li>
+      <li>$ cd /usr/local/&lt;torque_directory&gt;</li>
+      <li>$ ./configure</li>
+      <li>$ make</li>
+      <li>$ make install</li>
+      <li>$ su</li>
+      <li>$ echo /usr/local/lib > /etc/ld.so.conf.d/torque.conf</li>
+      <li>$ ldconfig</li>
+      <li>$ ./torque.setup root</li>
+    </ul>
+  </li>
+  <li>
+    <b>Initialize</b>
+    <ul>
+      <li>$ pbs_server trqauthd pbs_mom pbs_sched</li>
+    </ul>
+  </li>
+  <li>
+    <b>Configure</b>
+    <ul>
+      <li>$ qmgr -c "p s"</li>
+      <li>$ qmgr -c 'set server submit_hosts = localhost'</li>
+      <li>$ qmgr -c 'set server allow_node_submit = True'</li>
+    </ul>
+  </li>
 </ul>
+
+<h3>PBS_python installation and configuration in Ubuntu 16.04</h3>
+<ul>
+  <li>
+    <b>Install</b>
+    <ul>
+      <li>Download PBS_python from <a href="https://oss.trac.surfsara.nl/pbs_python/wiki/TorqueInstallation">Surfsara</a></li>
+      <li>Extract files</li>
+      <li>$ mv &lt;pbs_python_directory&gt; /usr/local/</li>
+      <li>$ cd /usr/local/&lt;pbs_python_directory&gt;</li>
+      <li>$ cd /usr/include</li>
+      <li>$ mkdir torque</li>
+      <li>$ cp /usr/local/&lt;pbs_python_directory&gt;/src/C++/log.h /usr/include/torque</li>
+      <li>$ ./configure</li>
+      <li>$ make</li>
+      <li>$ make install</li>
+    </ul>
+  </li>
+  <li>
+  <b>Import pbs from every directory</b>
+  <p>Copy all files from: /usr/local/lib/python2.7/site-packages/pbs/
+  to: /usr/local/lib/python2.7/dist-packages/</p>
+  </li>
+</ul>
+
