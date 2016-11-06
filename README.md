@@ -1,5 +1,6 @@
 # TORQUE-PBS-APP
-<h4>Restful web application, allows Torque pbs users to submit, manage their jobs and monitoring the cluster resources</h4>
+<h3>Restful web application, allows users to interact with Torque pbs over a WEB UI</h3>
+<h4>e.g. Submit, manage jobs and monitore cluster resources</h4>
 
 <p>The project has been installed and configured in <b>Ubuntu 16.04</b> OS</p>
 
