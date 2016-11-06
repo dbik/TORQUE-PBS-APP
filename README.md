@@ -11,7 +11,7 @@
   <li><b>PAM</b> library</li>
 </ul>
 
-<ol>
+<ul>
   <li>
     <h3>System libraries required</h3>
       <ul>
@@ -104,4 +104,4 @@
         </li>
       </ul>
     </li>
-</ol>
+</ul>
