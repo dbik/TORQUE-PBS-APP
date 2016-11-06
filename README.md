@@ -6,7 +6,7 @@
 
 <h3>Basic project requirements:</h3>
 <ul>
-  <li><b>Torque pbs</b> - version: 6.0.2 - available at: <a href="https://www.adaptivecomputing.com">Adaptive computing</a></li>
+  <li><b>Torque pbs</b> - version: 6.0.2 - available at: </li>
   <li><b>Pbs_python</b> library - available at <a href="https://oss.trac.surfsara.nl/pbs_python/">Surfsara</a></li>
 </ul>
 
@@ -19,7 +19,7 @@
     </ul>
   </li>
   <li>
-    <b>Java 8 install</b>
+    <b>Java 8</b>
     <ul>
       <li>$ add-apt-repository ppa:webupd8team/javaapt-get update</li>
       <li>$ apt-get update</li>
@@ -40,4 +40,13 @@
   </li>
 </ul>
 
-<h4>Torque install and configuration in Ubuntu 16.04</h4>
+<h3>Torque install and configuration in Ubuntu 16.04</h3>
+<ul>
+  <li>Download Torque V6.0.2 from <a href="https://www.adaptivecomputing.com">Adaptive computing</a></li>
+  <li>Extract files</li>
+  <li>$ suco mv &lt;torque_directory&gt; /usr/local/</li>
+  <li>$ cd /usr/local/&lt;torque_directory&gt;</li>
+  <li>$ ./configure</li>
+  <li>$ make</li>
+  <li>$ make install</li>
+</ul>
