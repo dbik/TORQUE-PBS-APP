@@ -1,0 +1,5 @@
+# Import from base.txt
+-r base.txt
+
+psycopg2
+MySQL-python

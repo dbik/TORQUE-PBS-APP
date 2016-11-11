@@ -1,0 +1,57 @@
+### USER REGISTRATION TESTS ###
+OS users
+1 -- username: jim password: aaaaa
+
+# CASE 1 -- Register
+curl -X POST -d "username=george&password=aaaaa&email=george@hotmail.com" http://localhost:8000/api/v1/users/register/
+# Response
+{"id":"21","last_login":null,"date_joined":"2016-11-11 14:18:24.870455+00:00","username":"george","email":"george@hotmail.com","files":[]}
+OS users
+1 -- username: jim password: aaaaa
+2 -- username: george password: aaaaa
+
+# CASE 2 -- Register with same username or email
+curl -X POST -d "username=george&password=aaaaa&email=george@hotmail.com" http://localhost:8000/api/v1/users/register/
+# Response:
+{"username":["A user with that username already exists."]}
+OS users
+1 -- username: jim password: aaaaa
+2 -- username: george password: aaaaa
+
+# CASE 3 -- Register without username, password or email field
+curl -X POST -d "username=john&password=aaaaa" http://localhost:8000/api/v1/users/register/
+# Response:
+{"email":["This field is required."]}
+OS users
+1 -- username: jim password: aaaaa
+2 -- username: george password: aaaaa
+
+# CASE 4 -- Register with user already in OS but not in application database
+curl -X POST -d "username=jim&password=aaaaa&email=jim@hotmail.com" http://localhost:8000/api/v1/users/register/
+# Response:
+{"id":"22","last_login":null,"date_joined":"2016-11-11 14:24:51.870088+00:00","username":"jim","email":"jim@hotmail.com","files":[]}
+OS users
+1 -- username: jim password: aaaaa
+2 -- username: george password: aaaaa
+
+### USER AUTHENTICATION TESTS ###
+
+# Authenticate active user jim
+curl -X POST -d "grant_type=password&username=jim&password=aaaaa" -u"A7TLPKeQwN3u5m6vIoMDHWPletBJluVGwSHbeLVY:SYrc41G7cAD3YNoUC6JTyLwV1wZgo9keu7NgDuqeMZGstgzESwl1fPH7cDkREIQ87r8pxESK8z5ZjEDSiJOxh0JHQZsM18u0tqJYf01Nr7WuqdgbeDWeLMFPtbO5RWPj" http://localhost:8000/o/token/
+# Response:
+{"access_token": "VzJkXpP2nYxaSAplRRnvmBPaHYmOUT", "token_type": "Bearer", "expires_in": 36000, "refresh_token": "Pvzgap8TK4gOkWOXXpZjtFzIRimJZG", "scope": "read write"}
+
+
+### USER LIST TESTS ###
+### USER DETAILS TESTS ###
+### USER ALTER TESTS ###
+
+### USER STORAGE TESTS ###
+
+# Get user storage
+curl -H "Authorization: Bearer VzJkXpP2nYxaSAplRRnvmBPaHYmOUT" http://localhost:8000/api/v1/storage/
+Response:
+[]
+
+# Upload file
+curl -i -X POST -H "Content-Type: multipart/form-data" -H "Authorization: Bearer VzJkXpP2nYxaSAplRRnvmBPaHYmOUT" -F "data=@/home/jim/Downloads/lavrio.jpg" -F "filename=vrei" http://localhost:8000/api/v1/storage/

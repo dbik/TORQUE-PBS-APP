@@ -1,0 +1,48 @@
+# User registration
+# -- username and email must me unique in system's OS and applications database
+# -- username, email and password are required
+# Command
+curl -X POST -d "username=<username>&password=<password>&email=<email>" http://localhost:8000/api/v1/users/register/
+# Example command
+curl -X POST -d "username=george&password=aaaaa&email=george@hotmail.com" http://localhost:8000/api/v1/users/register/
+
+# User Log in
+# -- Get authentication token
+# -- Username, password, client_id and client_secret are required
+# -- User must be registered in application (that means that he is going to have an account in OS) and be active
+# Command
+curl -X POST -d "grant_type=password&username=<user_name>&password=<password>" -u"<client_id>:<client_secret>" http://localhost:8000/o/token/
+# Example command
+curl -X POST -d "grant_type=password&username=george2&password=aaaaa" -u"A7TLPKeQwN3u5m6vIoMDHWPletBJluVGwSHbeLVY:SYrc41G7cAD3YNoUC6JTyLwV1wZgo9keu7NgDuqeMZGstgzESwl1fPH7cDkREIQ87r8pxESK8z5ZjEDSiJOxh0JHQZsM18u0tqJYf01Nr7WuqdgbeDWeLMFPtbO5RWPj" http://localhost:8000/o/token/
+
+# Retrieve users
+# -- User must be staff
+# Command
+curl -H "Authorization: Bearer <your_access_token>" http://localhost:8000/api/v1/users/
+# Example command
+curl -H "Authorization: Bearer Ytc6lnTnlK7MektqhmD69uHWtIizXP" http://localhost:8000/api/v1/users/
+
+# Retrieve user
+# -- Only the user can retrieve all info about his/her account through the API
+# Command
+curl -H "Authorization: Bearer <your_access_token>" http://localhost:8000/api/v1/users/<user_id>/
+# Example command
+curl -H "Authorization: Bearer Ytc6lnTnlK7MektqhmD69uHWtIizXP" http://localhost:8000/api/v1/users/17/
+
+# Alter - Update || Patch user
+# -- Only the user can update or patch his/her account through the API
+# -- Fields is_staff and is_superuser cannot change from the API, only from admin panel - These vars are ignored in the API
+# -- Username and email cannot be updated by API - PermissionDenied
+# Command
+curl -X PATCH -H "Authorization: Bearer <your_access_token>" -d "arg1=val1&arg2=val2" http://localhost:8000/api/v1/users/<user_id>/
+# Example command
+curl -X PATCH -H "Authorization: Bearer Ytc6lnTnlK7MektqhmD69uHWtIizXP" -d "first_name=george&last_name=bikas" http://localhost:8000/api/v1/users/17/
+
+
+# Retrieve user's storage
+# Command
+curl -H "Authorization: Bearer <your_access_token>" http://localhost:8000/api/v1/storage/
+# Example command
+curl -H "Authorization: Bearer N5p6tMobuvm1EzAIZI3Jcya9A3rB4a" http://localhost:8000/api/v1/storage/
+
+curl -i -X POST -H "Content-Type: multipart/form-data" -H "Authorization: Bearer N5p6tMobuvm1EzAIZI3Jcya9A3rB4a" -F "data=@/home/jim/Downloads/lavrio.jpg" -F "filename=vrei" http://localhost:8000/api/v1/storage/
