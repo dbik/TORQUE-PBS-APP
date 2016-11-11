@@ -14,8 +14,8 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.mysql",
         "NAME": 'torque_pbs_app_db',#os.environ.get('MYSQL_TORQUE_PBS_APP_DB_NAME', ''),
-        "USER": 'root', #os.environ.get('MYSQL_USER', ''),
-        "PASSWORD": 'qazZAQ123#@!', #os.environ.get('MYSQL_PASSWORD', ''),
+        "USER": 'aaa', #os.environ.get('MYSQL_USER', ''),
+        "PASSWORD": 'aaa', #os.environ.get('MYSQL_PASSWORD', ''),
         "HOST": "localhost",
         "PORT": 3306,
     }
