@@ -1,0 +1,24 @@
+{
+  "name": "web_torque_pbs_app",
+  "description": "angular front end web app",
+  "main": "index.js",
+  "authors": [
+    "jim bikas"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7",
+    "jquery": "^3.1.1",
+    "angular-bootstrap": "^2.2.0",
+    "angular-ui-router": "^0.3.2"
+  }
+}

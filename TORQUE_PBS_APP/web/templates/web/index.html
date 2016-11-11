@@ -1,0 +1,26 @@
+<html>
+
+    <head>
+
+        {% load staticfiles %}
+
+        <title>Torque PBS WEB Application</title>
+
+        <script type="text/javascript" src="{% static 'web/bower_components/jquery/dist/jquery.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'web/bower_components/angular/angular.js' %}"></script>
+        <script type="text/javascript" src="{% static 'web/bower_components/angular-ui-router/release/angular-ui-router.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'web/bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+        <script type="text/javascript" src="{% static 'web/js/dist/all.js' %}"></script>
+
+        <script>
+            var STATIC_URL = "{% static 'web' %}";
+        </script>
+
+    </head>
+
+    <body ng-app="torque_app">
+        <h1>Torque PBS web app</h1>
+        <ui-view></ui-view>
+    </body>
+
+</html>

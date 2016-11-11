@@ -1,0 +1,19 @@
+#Extensions
+*.pyc
+*.pyo
+*.py~
+*.txt
+.gitignore~
+.ebextensions/*.config~
+
+#PyCharm
+TORQUE_PBS_APP/.idea
+.idea
+
+#Media
+TORQUE_PBS_APP/media
+
+#Elastic Beanstalk
+.elasticbeanstalk/*
+!.elasticbeanstalk/*/cfg.yml
+!.elasticbeanstalk/*.global.yml
